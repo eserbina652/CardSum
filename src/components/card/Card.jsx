@@ -1,20 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './card.css'
-const Card = () => {
-    const [inputValue, setInputValue] = useState('')
-
-    const creatingNewCard = () =>{
-        console.log('hi')
-        return <Card/>
-    }
+const Card = ({el,index, handleAdd, handleChange}) => {
     return (<>
         <div className='card'>
            <input className='card-input'
-                  onChange={e => setInputValue(e.target.value)}
+                  onChange={e =>
+                      handleChange(index, e.target.value[e.target.value.length-1])}
                   type='text'
-                  value={inputValue}/>
+                  value={el}
+           />
         </div>
-        <div onClick={creatingNewCard} className='creatingNewCard'></div>
+        <div onClick={() => handleAdd(index)} className='creatingNewCard'></div>
         </>
     );
 };

@@ -1,4 +1,9 @@
 .main{
     display: flex;
+    flex-direction: column;
+}
+
+.cardWrapper{
+    display: flex;
     flex-wrap: wrap;
 }
